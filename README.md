@@ -1,10 +1,9 @@
-Audiobook Review and Rating System
 This project is an Audiobook Review and Rating System that allows users to browse audiobooks, view details, and submit reviews and ratings. The backend is built using Node.js, Express, and MongoDB, and the frontend is built using vite React.
 
 Prerequisites
 Make sure you have the following installed on your system:
-Node.js (v14 or higher)
-npm (v6 or higher)
+Node.js (v14 or higher), 
+npm (v6 or higher),
 MongoDB (local or cloud instance)
 
 Installation
