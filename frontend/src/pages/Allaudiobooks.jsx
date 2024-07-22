@@ -10,7 +10,7 @@ const Allaudiobooks = () => {
   
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get("http://localhost:1000/audiobook");
+      const response = await axios.get("http://localhost:5500/audiobook");
       console.log(response.data);
       setData(response.data);
     };

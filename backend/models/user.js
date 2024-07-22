@@ -16,9 +16,9 @@ const user = new mongoose.Schema({
         required:true,
         unique:true,
     },
-    avatar:{
+    role:{
         type:String,
-        default:"https://cdn.onlinewebfonts.com/svg/img_181369.png",
+        default:"user",
     },
 });
 

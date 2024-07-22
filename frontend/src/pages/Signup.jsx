@@ -19,7 +19,7 @@ const Signup = () => {
 Values.username===""||Values.email===""||Values.password===""
             ){alert("All fields are required!");}
             else{    
-                const response = await axios.post("http://localhost:1000/auth/signup", 
+                const response = await axios.post("http://localhost:5500/auth/signup", 
                 Values
                 );
                 console.log(Values);

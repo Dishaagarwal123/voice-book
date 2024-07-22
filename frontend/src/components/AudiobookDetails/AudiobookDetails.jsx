@@ -4,20 +4,40 @@ import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useSelector } from "react-redux";
 
 const AudiobookDetails = () => {
+
+    const isLoggedIn = useSelector((state)=>state.auth.isLoggedIn);
+
+    const headers = {
+        id: localStorage.getItem("id"),
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+    };
+
     const { id } = useParams();
     const navigate = useNavigate();
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [newReview, setNewReview] = useState({ rating: 0, comment: '' });
     const [isReviewing, setIsReviewing] = useState(false);
-    const [user, setUser] = useState(null); // To hold the current user information
+    
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const response = await axios.get("http://localhost:5500/auth/get-user-info",{headers}); 
+                console.log("user-info",response);
+            } catch (error) {
+                console.error("Error fetching user:", error);
+            }
+        };
+        fetchUser();
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:1000/audiobook/${id}`);
+                const response = await axios.get(`http://localhost:5500/audiobook/${id}`);
                 setData(response.data);
             } catch (error) {
                 console.error("Error fetching audiobook details:", error);
@@ -28,18 +48,6 @@ const AudiobookDetails = () => {
         fetchData();
     }, [id]);
 
-    useEffect(() => {
-        // Fetch or check the current user authentication status
-        const fetchUser = async () => {
-            try {
-                const response = await axios.get("http://localhost:1000/user/current"); // Update this to your actual endpoint
-                setUser(response.data);
-            } catch (error) {
-                console.error("Error fetching user:", error);
-            }
-        };
-        fetchUser();
-    }, []);
 
     const handleReviewChange = (e) => {
         const { name, value } = e.target;
@@ -49,7 +57,7 @@ const AudiobookDetails = () => {
     const handleSubmitReview = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`http://localhost:1000/review/${id}`, newReview);
+            const response = await axios.post(`http://localhost:5500/review/${id}`, newReview);
             setData(prev => ({
                 ...prev,
                 reviews: [response.data, ...prev.reviews],
@@ -64,7 +72,7 @@ const AudiobookDetails = () => {
     };
 
     const handleWriteReviewClick = () => {
-        if (user) {
+        if (isLoggedIn) {
             setIsReviewing(true);
         } else {
             navigate('/login'); // Redirect to login page if not logged in
@@ -80,7 +88,7 @@ const AudiobookDetails = () => {
     }
 
     const fullStars = Math.floor(data.averageRating);
-    const hasHalfStar = (data.averageRating - fullStars) >0;
+    const hasHalfStar = (data.averageRating - fullStars) > 0;
     const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
     return (
@@ -177,3 +185,4 @@ const AudiobookDetails = () => {
 };
 
 export default AudiobookDetails;
+
