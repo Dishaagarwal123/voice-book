@@ -13,5 +13,4 @@ Installation
 
  ![Screenshot (58)](https://github.com/user-attachments/assets/d409bc7a-7b23-436c-a422-926711469171)
 ![Screenshot (66)](https://github.com/user-attachments/assets/d81fedee-b4b6-46fc-9b3f-3f72378d849a)
- ![Screenshot (63)](https://github.com/user-attachments/assets/067c6a1e-3385-404e-a761-19b8ad5a125e)
  ![Screenshot (57)](https://github.com/user-attachments/assets/70b46d9f-6968-439a-8d6b-6bb9a3a9f9e6)
