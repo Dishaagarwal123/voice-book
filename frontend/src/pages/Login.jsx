@@ -1,6 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import {React,useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 const Login = () =>{
+  const [Values,setValues] = useState({
+    username: "",password:"",
+});
+const navigate = useNavigate();
+const change = (e) =>{
+    const {name,value} = e.target;
+    setValues({...Values,[name]:value});
+}
+const submit = async () => {
+    console.log("clicked");
+    try {
+        if(
+Values.username===""||Values.password===""
+        ){alert("All fields are required!");}
+        else{    
+            const response = await axios.post("http://localhost:1000/auth/login", 
+            Values
+            );
+            console.log(response.data);
+            // navigate("/login");
+        }
+    
+          
+    } catch (error) {
+        alert(error.response.data.message);
+    }
+};
+
+
+
 return(
 
 <div className="flex min-h-screen items-center justify-center bg-white dark:bg-gray-950 p-12">
@@ -14,12 +46,12 @@ return(
 
         <div className="mt-8 space-y-8">
           <div className="space-y-6">
-            <input className="w-full bg-transparent text-gray-600 dark:text-white dark:border-gray-700 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-600 invalid:border-red-500 dark:placeholder-gray-300" placeholder="Your Email or Username" type="emailuser" name="emailuser" id="emailuser" />
+            <input className="w-full bg-transparent text-gray-600 dark:text-white dark:border-gray-700 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-600 invalid:border-red-500 dark:placeholder-gray-300" placeholder="Your Username" type="text" name="username" required value={Values.username} onChange={change} />
 
-            <input className="w-full bg-transparent text-gray-600 dark:text-white dark:border-gray-700 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-600 invalid:border-red-500 dark:placeholder-gray-300" placeholder="Your Password" type="password" name="password" id="password" />
+            <input className="w-full bg-transparent text-gray-600 dark:text-white dark:border-gray-700 rounded-md border border-gray-300 px-3 py-2 text-sm placeholder-gray-600 invalid:border-red-500 dark:placeholder-gray-300" placeholder="Your Password" type="password" name="password" required value={Values.password} onChange={change} />
           </div>
 
-          <button className="h-9 px-3 w-full bg-orange-500 hover:bg-orange-700 active:bg-orange-800 focus:bg-orange-700 transition duration-500 rounded-md text-white">
+          <button className="h-9 px-3 w-full bg-orange-500 hover:bg-orange-700 active:bg-orange-800 focus:bg-orange-700 transition duration-500 rounded-md text-white" onClick={submit}>
             Login
           </button>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Searchbar from "../Searchbar/Searchbar";
 const Navbar = () => {
     const links = [
@@ -15,9 +16,20 @@ const Navbar = () => {
             title: "Login",
             link: "/login",
         },
+        {
+            title: "Logout",
+            link: "/logout",
+        },
        
     ];
-
+    const isLoggedIn = useSelector((state)=>state.auth.isLoggedIn);
+    console.log(isLoggedIn);
+    if(isLoggedIn===false){
+        links.splice(3,1);
+    }
+    else{
+        links.splice(2,1);
+    }
     return (
         <div className="flex bg-orange-400 text-white px-8 py-4 items-center justify-between">
             <div className="flex items-center">

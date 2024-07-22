@@ -18,9 +18,11 @@ const submitReview = async (audiobookId, userId, reviewData) => {
     } else {
         // Create a new review
         const newReview = new Review({
-            audiobookId,
-            userId,
-            ...reviewData,
+            audiobookId: audiobookId,
+            userId: userId,
+            rating: reviewData.rating,
+            comment: reviewData.comment,
+            createdAt: reviewData.createdAt,
         });
         await newReview.save();
 
