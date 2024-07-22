@@ -1,8 +1,4 @@
 This project is an Audiobook Review and Rating System that allows users to browse audiobooks, view details, and submit reviews and ratings. The backend is built using Node.js, Express, and MongoDB, and the frontend is built using vite React.
-![Screenshot (58)](https://github.com/user-attachments/assets/d409bc7a-7b23-436c-a422-926711469171)
-![Screenshot (63)](https://github.com/user-attachments/assets/067c6a1e-3385-404e-a761-19b8ad5a125e)
-![Screenshot (59)](https://github.com/user-attachments/assets/eeff5a50-9951-41fe-ab11-eab9706bdc13)
-![Screenshot (57)](https://github.com/user-attachments/assets/70b46d9f-6968-439a-8d6b-6bb9a3a9f9e6)
 
 Prerequisites:
 Make sure you have the following installed on your system:
@@ -14,3 +10,12 @@ Installation
 2. install dependencies for backend and frontend with the help of package.json files.
 3. navigate to backend folder in terminal and type the command "nodemon app.js" to run the server. (optionally, you can see the server running on 'http://localhost:5500').
 4. in a seperate terminal, navigate to frontend and type "npm run dev" to start the browser. Follow the link shown in terminal to view and use the web application.
+
+1. ![Screenshot (58)](https://github.com/user-attachments/assets/d409bc7a-7b23-436c-a422-926711469171)
+
+   
+2. ![Screenshot (63)](https://github.com/user-attachments/assets/067c6a1e-3385-404e-a761-19b8ad5a125e)
+   
+3. ![Screenshot (59)](https://github.com/user-attachments/assets/eeff5a50-9951-41fe-ab11-eab9706bdc13)
+   
+4. ![Screenshot (57)](https://github.com/user-attachments/assets/70b46d9f-6968-439a-8d6b-6bb9a3a9f9e6)
