@@ -12,22 +12,6 @@ Installation
 4. in a seperate terminal, navigate to frontend and type "npm run dev" to start the browser. Follow the link shown in terminal to view and use the web application.
 
  ![Screenshot (58)](https://github.com/user-attachments/assets/d409bc7a-7b23-436c-a422-926711469171)
-
-
-
-
-
-   
+![Screenshot (66)](https://github.com/user-attachments/assets/d81fedee-b4b6-46fc-9b3f-3f72378d849a)
  ![Screenshot (63)](https://github.com/user-attachments/assets/067c6a1e-3385-404e-a761-19b8ad5a125e)
-   
-
- 
- 
- 
- ![Screenshot (59)](https://github.com/user-attachments/assets/eeff5a50-9951-41fe-ab11-eab9706bdc13)
-   
-
- 
- 
- 
  ![Screenshot (57)](https://github.com/user-attachments/assets/70b46d9f-6968-439a-8d6b-6bb9a3a9f9e6)
