@@ -6,10 +6,10 @@ return(
   <div>
   <h1 className="text-2xl font-semibold text-red-500">Follow us on</h1>
   <div>links in one row</div>
-  <h2>&2024 voiceter</h2>
+  <h2>&2024 voiceBook</h2>
   </div>
   <div>
- Go to navbar
+ voiceBook
   </div>
   </div>
  

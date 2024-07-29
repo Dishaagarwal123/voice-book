@@ -11,6 +11,7 @@ import AudiobookDetails from "./components/AudiobookDetails/AudiobookDetails";
 import './App.css';  // Import the CSS file
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "./store/auth";
+import SearchResults from "./components/Searchbar/SearchResults";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/logout" element={<Logout/>} />
             <Route path="/signup" element={<Signup/>} />
             <Route path="/audiobook/:id" element={<AudiobookDetails />} />
+            <Route path="/search-results" element={<SearchResults/>} />
           </Routes>
         </div>
         {/* <Footer /> */}

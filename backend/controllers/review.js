@@ -11,7 +11,7 @@ const submitReview = async (audiobookId, userId, reviewData) => {
             { $set: reviewData }
         );
 
-        // Optionally update audiobook with new average rating and review count
+        // update audiobook with new average rating and review count
         await updateAudiobookRating(audiobookId);
 
         return existingReview;
@@ -26,14 +26,12 @@ const submitReview = async (audiobookId, userId, reviewData) => {
         });
         await newReview.save();
 
-        // Optionally update audiobook with average rating and review count
+        // update audiobook with average rating and review count
         await updateAudiobookRating(audiobookId);
 
         return newReview;
     }
 };
-
-// Function to update audiobook rating and review count
 const updateAudiobookRating = async (audiobookId) => {
     const reviews = await Review.find({ audiobookId });
     const averageRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
