@@ -4,9 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const conn = require("./conn/conn");
 app.use(express.json());
-app.use(cors({
-    origin: 'http://localhost:5173' // Adjust to match your frontend URL
-}));
+app.use(cors());
 
 conn().then(() => {
     
