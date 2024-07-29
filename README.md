@@ -15,6 +15,7 @@ Installation
 3. navigate to backend folder in terminal and type the command "nodemon app.js" to run the server. (optionally, you can see the server running on 'http://localhost:5500').
 4. in a seperate terminal, navigate to frontend and type "npm run dev" to start the browser. Follow the link shown in terminal to view and use the web application.
 
- ![Screenshot (58)](https://github.com/user-attachments/assets/d409bc7a-7b23-436c-a422-926711469171)
-![Screenshot (66)](https://github.com/user-attachments/assets/d81fedee-b4b6-46fc-9b3f-3f72378d849a)
- ![Screenshot (57)](https://github.com/user-attachments/assets/70b46d9f-6968-439a-8d6b-6bb9a3a9f9e6)
+![Screenshot (70)](https://github.com/user-attachments/assets/2cc00598-b2bb-4559-91e2-2551c78babe1)
+![Screenshot (74)](https://github.com/user-attachments/assets/85adcbe1-743a-431d-b924-73a4fbf35cfd)
+![Screenshot (72)](https://github.com/user-attachments/assets/17c93d28-6be8-4375-976e-5997483962f3)
+![Screenshot (57)](https://github.com/user-attachments/assets/67a4f5d7-ae63-47d0-9a96-6a3934e91512)
